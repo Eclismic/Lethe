@@ -8,6 +8,9 @@
     --secondaryText: #4b5156;
 
     --navigationColor: #007a7d;
+
+    --previewBg: #a2c3c4;
+    --previewShadow: #f0ead6;
 }
 
 html,body{
@@ -22,7 +25,7 @@ h1,h2,h3,h4,h5,h6{
 
 a{
     text-decoration: none;
-    color: var(--mainText);
+    color: var(--navigationColor);
     font-family: 'Roboto Mono', monospace;
 }
 
@@ -103,10 +106,94 @@ p, li, span, label, input, textarea{
     grid-area: left-column;
 }
 
-.rigth-column{
+.right-column{
     grid-area: right-column;
+    display: grid;
+    align-content: center;
+    padding-top: 50px;
+    padding-bottom: 75px;
 }
 
+#preview-shadow{
+    background-color: var(--previewShadow);
+    width: 300px;
+    height: 210px;
+    padding-left: 30px;
+    padding-top: 30px;
+
+}
+
+#preview{
+    width: 300px;
+    border: 1.5px solid #17a2b8;
+    background-color: var(--previewBg);
+    padding: 15px;
+    position: relative;
+}
+
+.corner{
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    border: 1.5px solid #17a2b8;
+    background-color: #fff;
+    position: absolute;
+}
+
+#corner-tl{
+    top:-5px;
+    left:-5px;
+}
+
+#corner-tr{
+    top:-5px;
+    right:-5px;
+}
+
+#corner-br{
+    bottom:-5px;
+    right:-5px;
+}
+
+#corner-bl{
+    bottom:-5px;
+    left:-5px;
+}
+
+.about-wrapper{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(320px, 1fr));
+    padding-bottom: 50px ;
+    padding-top: 50px;
+    gap: 100px;
+    padding-bottom: 50px;
+}
+
+#skills{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--previewShadow);
+}
+
+.project{
+    border: 1px solid var(--borderColor);
+    -webkit-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+	-moz-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+    box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+}
+
+.thumbnail{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.project-preview{
+    background:#fff;
+    padding-left: 5px;
+    font-size: 14px;
+}
 
 @media screen and (max-width: 1600px){
     .main-container{
@@ -114,3 +201,17 @@ p, li, span, label, input, textarea{
     }
 }
 
+@media screen and (max-width: 800px){
+    .intro-wrapper{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "nav-wrapper"
+        "left-column" 
+        "right-column"
+        ;
+    }
+
+    .right-column{
+        justify-content: center;
+    }
+}
