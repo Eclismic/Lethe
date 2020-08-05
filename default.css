@@ -175,11 +175,24 @@ p, li, span, label, input, textarea{
     background-color: var(--previewShadow);
 }
 
-.project{
+.portfolio{
+    position:relative;
     border: 1px solid var(--borderColor);
     -webkit-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
 	-moz-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
     box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+    overflow: hidden;
+}
+
+.project{
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.project.active{
+    visibility: visible;
 }
 
 .thumbnail{
@@ -187,12 +200,19 @@ p, li, span, label, input, textarea{
     height: 100%;
     display: block;
     object-fit: cover;
+    margin: 0 0 0;
 }
 
 .project-preview{
     background:#fff;
     padding-left: 5px;
     font-size: 14px;
+}
+
+.button-wrapper{
+    display: flex;
+    justify-content: space-between;
+    margin: 2px;
 }
 
 @media screen and (max-width: 1600px){
