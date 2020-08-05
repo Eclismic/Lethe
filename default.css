@@ -200,7 +200,6 @@ p, li, span, label, input, textarea{
     height: 100%;
     display: block;
     object-fit: cover;
-    margin: 0 0 0;
 }
 
 .project-preview{
