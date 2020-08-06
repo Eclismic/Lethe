@@ -23,11 +23,7 @@
                 </div>
                 <div class="intro-wrapper">
                     <div class="nav-wrapper">
-                        <a>Webdesign</a>
-                        <a>Animaties</a>
-                        <a>Google-Search-Optimalization</a>
-                        <a>Koppelingen</a>
-                        <a>Contact</a>
+                        <a href="#contact-form">Contact</a>
                     </div>
                     <div class="left-column">
                         profiel
@@ -47,7 +43,6 @@
                          </div>
                     </div>
                 </div>
-                <a href="#">Link</a> 
             </div>
         </section>
         <section class="s2">
@@ -57,7 +52,7 @@
                         <h4>Over mij</h4>   
                         <p>In het dagelijks leven ben ik verantwoordelijk voor het opleveren
                            van nieuwe software. Die software bestaat meerendeels uit het aanleggen
-                           van koppelingen tussen interne en externe systemen. 
+                           van koppelingen tussen interne en externe systemen.
                         </p>
                         <p>Hoewel ik het webdesign naast mijn werk inplan, maak ik genoeg tijd vrij 
                             om uw idee, project of onderneming op de kaart te zetten.
@@ -82,29 +77,29 @@
                     </div>
                     <div class="projecten">
                         <h4>Aantal van mijn laatste projecten</h4>
-                        <div class="portfolio">
-                            <div class="project active" >
-                                <img class="thumbnail" src="images/Knipsel.PNG">
-                                <div class="project-preview">
-                                    <h6>Vakantieverhuur Mienterglop 13</h6>
-                                    <p>Website,Boekingssysteem</p>
-                                    <a href="#">Klik hier</a> 
+                        <div class="card">
+                            <div class="portfolio">
+                                <div class="project active" >
+                                    <img class="thumbnail" src="images/Knipsel.PNG">
+                                    <div class="project-preview">
+                                        <h6 class="title">Vakantieverhuur Mienterglop 13</h6>
+                                        <p class="description">Website,Boekingssysteem</p>
+                                        <a href="#">Klik hier</a> 
+                                    </div>
                                 </div>
-                                <div class="button-wrapper">
-                                    <a id="prev" href="#"> vorige</a>
-                                    <a id="next" href="#"> volgende</a>
-                                </div>
-                            </div>
-                            
-                            <div class="project">
-                                <img class="thumbnail" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/Mouse.svg">
-                                <div class="project-preview">
-                                    <h6>The Sneaky Mouse</h6>
-                                    <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                                    <a href="#">Klik hier</a> 
+                                <div class="project">
+                                    <img class="thumbnail" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/Mouse.svg">
+                                    <div class="project-preview">
+                                        <h6 class="title">The Sneaky Mouse</h6>
+                                        <p class="description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                                        <a href="#">Klik hier</a> 
+                                    </div>
                                 </div>
                             </div>
-                            
+                            <div class="button-wrapper">
+                                <a class="btn" id="prev" href="#"> vorige</a>
+                                <a class="btn" id="next" href="#"> volgende</a>
+                            </div>
                         </div>
                     </div>    
                 </div>
@@ -112,7 +107,23 @@
         </section>
         <section class="s1">
             <div class="main-container">
-                Contact
+                <h3 style="text-align: center;">Contact</h3>
+
+                <form id="contact-form">
+                    <label>Naam</label>
+                    <input class="input-field" type="text" name="naam">
+
+                    <label>Onderwerp</label>
+                    <input class="input-field" type="text" name="onderwerp">
+
+                    <label>Email</label>
+                    <input class="input-field" type="text" name="email">
+
+                    <label>Bericht</label>
+                    <textarea class="input-field" type="message" name="bericht"></textarea>
+
+                    <input id="submit-btn"type="submit" value="verstuur">
+                </form>
             </div>
         </section>
     </body>

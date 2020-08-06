@@ -11,11 +11,16 @@
 
     --previewBg: #a2c3c4;
     --previewShadow: #f0ead6;
+
+    --duration: 0.5s;
+
+    --btnColor:black;
 }
 
 html,body{
     padding:0;
     margin:0;
+    transition: var(--duration) ease;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -85,13 +90,15 @@ p, li, span, label, input, textarea{
     "nav-wrapper nav-wrapper"
     "left-column right-column"
     ;
+
+    margin: 20px;
 }
 
 .nav-wrapper{
     grid-area: nav-wrapper;
     border-bottom: 1px solid var(--borderColor);
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     background-color: var(--mainColor);
 }
@@ -126,7 +133,7 @@ p, li, span, label, input, textarea{
 #preview{
     width: 300px;
     border: 1.5px solid #17a2b8;
-    background-color: var(--previewBg);
+    background: transparent;
     padding: 15px;
     position: relative;
 }
@@ -175,12 +182,15 @@ p, li, span, label, input, textarea{
     background-color: var(--previewShadow);
 }
 
-.portfolio{
-    position:relative;
+.card{
     border: 1px solid var(--borderColor);
     -webkit-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
 	-moz-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
     box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+}
+
+.portfolio{
+    position:relative;
     overflow: hidden;
 }
 
@@ -193,6 +203,7 @@ p, li, span, label, input, textarea{
 
 .project.active{
     visibility: visible;
+    animation: 1s ease 0s 1 slideInFromLeft;
 }
 
 .thumbnail{
@@ -201,6 +212,13 @@ p, li, span, label, input, textarea{
     display: block;
     object-fit: cover;
 }
+
+.title {
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+
 
 .project-preview{
     background:#fff;
@@ -212,6 +230,43 @@ p, li, span, label, input, textarea{
     display: flex;
     justify-content: space-between;
     margin: 2px;
+}
+
+#contact-form{
+    display: block;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid var(--borderColor);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 15px;
+}
+
+#contact-form textarea{
+    min-height: 100px;
+}
+
+.input-field{
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--borderColor);
+    font-size: 14px;
+}
+
+#submit-btn{
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    color: #fff;
+    background-color: var(--btnColor);
+    -webkit-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+	-moz-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+    box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+    border: none;
 }
 
 @media screen and (max-width: 1600px){
@@ -234,3 +289,12 @@ p, li, span, label, input, textarea{
         justify-content: center;
     }
 }
+
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
