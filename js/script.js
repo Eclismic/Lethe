@@ -55,5 +55,41 @@ $(document).ready(function() {
 
     calcProductHeight();
   });
+
+  $('#contact-form').on('submit', function(event) {
+    event.preventDefault(); // prevent reload
+
+    const message = document.querySelector("textarea").value;
+    const naam = document.querySelector("input[name='naam'").value;
+    const onderwerp = document.querySelector("input[name='onderwerp'").value;
+
+
+    
+    console.log(onderwerp);
+
+
+
+   var data = {
+    service_id: 'gmail',
+    template_id: 'template_FWsMu9Vo',
+    user_id: 'user_NLpRcuoPFiAcI81sxdIwx',
+    template_params: {
+        'from_name': naam,
+        'message_html': message,
+        'onderwerp': onderwerp
+    }
+};
+ 
+$.ajax('https://api.emailjs.com/api/v1.0/email/send', {
+    type: 'POST',
+    data: JSON.stringify(data),
+    contentType: 'application/json'
+}).done(function() {
+    alert('Uw mail is verstuurd!');
+}).fail(function(error) {
+    alert('Oops... ' + JSON.stringify(error));
+});
+});
+
 });
 
