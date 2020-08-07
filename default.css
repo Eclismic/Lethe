@@ -225,6 +225,7 @@ p, li, span, label, input, textarea{
     background:#fff;
     padding-left: 5px;
     font-size: 14px;
+    margin-bottom: 5px;
 }
 
 .button-wrapper{
